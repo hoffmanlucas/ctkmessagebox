@@ -4,3 +4,4 @@ venv/
 .idea/
 dist/
 ctkmessagebox2.egg-info/
+**/__pycache__/

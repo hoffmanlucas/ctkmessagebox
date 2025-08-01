@@ -108,13 +108,14 @@ class MessageBox(ctk.CTkToplevel):
         width = 300
         height = 150+9*n_lines
 
-        # Obtendo a largura e altura da tela
-        screen_width = self.winfo_screenwidth()
-        screen_height = self.winfo_screenheight()
-
-        # Calculando a posição x e y para centralizar a janela
-        position_x = int((screen_width / 2) - (width / 2))
-        position_y = int((screen_height / 2) - (height / 2))
+        if master is None:
+            # place the window to center of screen
+            position_x = int((self.winfo_screenwidth()-width)/2)
+            position_y = int((self.winfo_screenheight()-height)/2)
+        else:
+            # place the window to center of master window
+            position_x = int(master.winfo_width() * .5 + master.winfo_x() - .5 * width + 7)
+            position_y = int(master.winfo_height() * .5 + master.winfo_y() - .5 * height + 20)
 
         # Layout
         self.geometry(f"450x{height}+{position_x}+{position_y}")
