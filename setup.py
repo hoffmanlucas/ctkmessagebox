@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ctkmessagebox2",
-    version="0.3.3",
+    version="0.3.4",
     packages=find_packages(),  # Localiza todos os pacotes Python dentro do diretório
     include_package_data=True,  # Inclui arquivos como ícones (definidos em MANIFEST.in)
     description="The MessageBox package for CustomTkinter",
